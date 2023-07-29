@@ -10,7 +10,6 @@ M.blankline = {
     "lspinfo",
     "TelescopePrompt",
     "TelescopeResults",
-    "mason",
     "nvdash",
     "nvcheatsheet",
     "",

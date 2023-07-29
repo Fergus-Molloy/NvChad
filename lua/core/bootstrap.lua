@@ -30,9 +30,6 @@ M.lazy = function(install_path)
 
   -- install plugins
   require "plugins"
-
-  -- mason packages & show post_boostrap screen
-  require "nvchad.post_bootstrap"()
 end
 
 M.gen_chadrc_template = function()

@@ -12,11 +12,12 @@ g.transparency = config.ui.transparency
 opt.laststatus = 3 -- global statusline
 opt.showmode = false
 
-opt.clipboard = "unnamedplus"
+opt.clipboard = ""
 opt.cursorline = true
 
 -- Indenting
 opt.expandtab = true
+opt.joinspaces = false
 opt.shiftwidth = 2
 opt.smartindent = true
 opt.tabstop = 2
@@ -29,8 +30,10 @@ opt.mouse = "a"
 
 -- Numbers
 opt.number = true
+opt.relativenumber = true
 opt.numberwidth = 2
-opt.ruler = false
+opt.ruler = true
+opt.colorcolumn = "80"
 
 -- disable nvim intro
 opt.shortmess:append "sI"
@@ -41,6 +44,16 @@ opt.splitright = true
 opt.termguicolors = true
 opt.timeoutlen = 400
 opt.undofile = true
+
+-- scrolloff
+opt.scrolloff = 8
+opt.sidescrolloff = 8
+
+--font
+opt.guifont = "Fira Code:h16"
+
+-- for cmp
+vim.opt.completeopt = { "menuone", "noselect" }
 
 -- interval for writing swap file to disk, also used by gitsigns
 opt.updatetime = 250
@@ -55,10 +68,6 @@ g.mapleader = " "
 for _, provider in ipairs { "node", "perl", "python3", "ruby" } do
   vim.g["loaded_" .. provider .. "_provider"] = 0
 end
-
--- add binaries installed by mason.nvim to path
-local is_windows = vim.loop.os_uname().sysname == "Windows_NT"
-vim.env.PATH = vim.fn.stdpath "data" .. "/mason/bin" .. (is_windows and ";" or ":") .. vim.env.PATH
 
 -------------------------------------- autocmds ------------------------------------------
 local autocmd = vim.api.nvim_create_autocmd

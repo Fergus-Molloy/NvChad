@@ -1,5 +1,4 @@
 plugin
-custom
 spell
 ftplugin
 syntax
@@ -7,3 +6,5 @@ coc-settings.json
 .luarc.json
 lazy-lock.json
 after
+.direnv
+.envrc
